@@ -159,13 +159,15 @@ class OperacionesPersona(object):
     
     def obtener_listado_personas1(self, letra1, letra2):
         
-        cadena = ""
+        #cadena = ""
+        lista = []
         for x in self.obtener_listado_personas():
 
             if(x.obtener_nombre()[0:1] == letra1 or x.obtener_nombre()[0:1] == letra2 ): # Compara la primera letra del nombre
-                cadena = "%s %s-%s\n\t" %(cadena, x.obtener_nombre(),x.obtener_apellido())
-        
-        return cadena # Retorna lo que contiene la varible cadena
+                #cadena = "%s %s-%s\n\t" %(cadena, x.obtener_nombre(),x.obtener_apellido())
+                lista.append(x.obtener_nombre())
+        return lista
+
 
     def __str__(self):
             
